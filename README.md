@@ -113,7 +113,7 @@ Server 2 - /var/lib/server2_files
 
 ### 5️⃣ Testcases
 
-- Run `client.py` from your client machine. Two args are needed. `PUBLIC_IP` of `Server2` and filename with default path `"/"`
+- Run `client.py` from your client machine. Two args are needed. `PUBLIC_IP` of the mediator server `Server1` and filename with default path `"/"`
 
 #### Basic Usage():
 
