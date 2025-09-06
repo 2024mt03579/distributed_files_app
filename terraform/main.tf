@@ -9,22 +9,7 @@ data "aws_ssm_parameter" "ubuntu_2404_amd64" {
 locals {
   server1_name = "server1-file-mediator"
   server2_name = "server2-file-replica"
-}
-
-# Security group list (single provided SG)
-locals {
   sg_ids = [var.security_group_id]
-}
-
-# Common userdata template: takes instance role to generate appropriate systemd unit file and files dir
-data "template_file" "user_data" {
-  template = file("${path.module}/user_data.tpl")
-  vars = {
-    server_mode      = "${mode}"       # placeholder replaced by each instance's locals (see below)
-    files_dir        = "${files_dir}"   # replaced per instance
-    server2_host     = "${server2_host}"# replaced on server1 instance only
-    server2_port     = "9002"
-  }
 }
 
 # We cannot pass dynamic vars into the above single template resource easily per-instance,
