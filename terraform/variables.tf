@@ -50,3 +50,7 @@ variable "files_dir_server2" {
   type    = string
   default = "/var/lib/server2_files"
 }
+
+variable "ssh_private_key_path" {
+  type = string
+}
