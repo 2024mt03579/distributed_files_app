@@ -54,7 +54,7 @@ Ensure you have the following tools installed and configured in your client desk
 - Default VPC in the region
 - Subnet 
 - SecurityGroup
-- Key Pair in '.pem' format downloaded to your desktop or VM
+- Key Pair in '.pem' created in aws
 - Inbound Rules 
   --------------------
   Protocol   |   Port
@@ -65,6 +65,7 @@ Ensure you have the following tools installed and configured in your client desk
   ---------------------
 ```
 - Note down all the IDs of the above resources in AWS.
+- Download key to your desktop or VM and place it at a known location.
 
 ### 3️⃣ Preparing Terraform files
 
@@ -93,7 +94,7 @@ terraform plan
 terraform apply -auto-approve
 ```
 
-** Note down the **public IP** address of the Mediator Server : `Server_2` in the terraform output.
+** Note down the **public IP** address of the Mediator Server : `Server_1` in the terraform output.
 
 **This will create the below setup**
 
