@@ -7,8 +7,8 @@ MODE="${mode}"                # "server1" or "server2"
 FILES_DIR="${files_dir}"
 SERVER2_HOST="${server2_host}"
 
-APP_DIR="/opt/fileapp"
-SCRIPT_PATH="${APP_DIR}/ec2_file_servers.py"
+APP_DIR="${app_dir}"
+SCRIPT_PATH="${script_path}"
 
 # Install minimal packages (Ubuntu)
 apt-get update -y
