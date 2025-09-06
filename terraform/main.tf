@@ -34,7 +34,7 @@ resource "aws_instance" "server2" {
     mode        = "server2"
     files_dir   = var.files_dir_server2
     server2_host = ""      # not used for server2
-    app_dir      = "/opt/fileapp"
+    APP_DIR      = "/opt/fileapp"
     script_path  = "/opt/fileapp/ec2_file_servers.py"
   })
 }
