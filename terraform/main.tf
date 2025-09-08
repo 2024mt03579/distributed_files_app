@@ -227,7 +227,7 @@ resource "null_resource" "install_rsync_cron_on_server2" {
       "chown -R ubuntu:ubuntu /var/lib/server2_files /var/lib/server1_files || true",
       # write the crontab line (use server1 private ip from Terraform interpolation)
       "crontab -l -u ubuntu 2>/dev/null || true",
-      "echo '*/2 * * * * /usr/bin/rsync -az --delete -e \"ssh -i /home/ubuntu/.ssh/cluster_id_rsa -o StrictHostKeyChecking=no\" ubuntu@${aws_instance.server1.private_ip}:/var/lib/server1_files/ /var/lib/server2_files/' | crontab -u ubuntu -",
+      "echo '*/2 * * * * /usr/bin/rsync -az --delete -e \"ssh -i /home/ubuntu/.ssh/id_rsa -o StrictHostKeyChecking=no\" ubuntu@${aws_instance.server1.private_ip}:/var/lib/server1_files/ /var/lib/server2_files/' | crontab -u ubuntu -",
     ]
   }
 }
